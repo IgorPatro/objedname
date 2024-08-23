@@ -1,16 +1,20 @@
 import { Event } from "./type";
+import clamp from "lodash/clamp";
 
+// Note: This function is used to generate random events.
 export const generateEvents = (): Event[] => {
   const data = [];
 
-  for (let hour = 0; hour < 24; hour++) {
+  for (let hour = 0; hour < 10; hour++) {
     const timeStr = `${hour.toString().padStart(2, "0")}:00`;
     const capacity = Math.floor(Math.random() * 5) + 1;
+    const leftCapacity = clamp(Math.floor(Math.random() * 5) + 1, 1, capacity);
 
     const entry = {
       Time: timeStr,
-      Capacity: capacity,
+      Capacity: leftCapacity,
       OriginalCapacity: capacity,
+      id: Math.random().toString(36).substr(2, 9),
     };
 
     data.push(entry);
