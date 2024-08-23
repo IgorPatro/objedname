@@ -2,7 +2,7 @@
 
 ## Steps of work
 
-### 1. Understanding legacy code without starting
+### 1. Understanding legacy code without starting it
 
 It was impossible to find missing instances like StoreManager or CashAPI. I decided that I will just go through the code and try to understand it.
 
@@ -27,3 +27,5 @@ I'm am 100% sure that the final result of this task should be different. Probabl
 ### - Adjust mobile version
 
 ### - Replace date utils to library for managing dates
+
+### - Adding errors handling (especially for data fetching)
